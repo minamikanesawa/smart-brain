@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Particles from 'react-particles-js';
 import FaceRecognition from './Components/FaceRecognition/FaceRecognition';
 import Navigation from './Components/Navigation/Navigation';
-import SignIn from './Components/SignIn/SignIn';
+import Signin from './Components/Signin/Signin';
 import Register from './Components/Register/Register';
 import Logo from './Components/Logo/Logo';
 import ImageLinkForm from './Components/ImageLinkForm/ImageLinkForm';
@@ -99,11 +99,11 @@ class App extends Component {
               id: this.state.user.id
             })
           })
-          .then(response => response.json())
-          .then(count => {
-            this.setState(Object.assign(this.state.user, { entries: count }))
-          })
-          .catch(console.log)
+            .then(response => response.json())
+            .then(count => {
+              this.setState(Object.assign(this.state.user, { entries: count }))
+            })
+            .catch(console.log)
 
         }
         this.displayFaceBox(this.calculateFaceLocation(response))
@@ -147,18 +147,18 @@ class App extends Component {
               box={box} 
               imageUrl={imageUrl} 
             />
-          </div>
+            </div>
           : (
-            route === 'signin'
-            ? <SignIn 
-                loadUser={this.loadUser} 
-                onRouteChange={this.onRouteChange} 
-              />
-            : <Register 
-                loadUser={this.loadUser} 
-                onRouteChange={this.onRouteChange} 
-              />
-          ) 
+              route === 'signin'
+              ? <Signin 
+                  loadUser={this.loadUser} 
+                  onRouteChange={this.onRouteChange} 
+                />
+              : <Register 
+                  loadUser={this.loadUser} 
+                  onRouteChange={this.onRouteChange} 
+                />
+            ) 
         }
       </div> 
     );

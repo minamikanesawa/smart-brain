@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Particles from 'react-particles-js';
 import FaceRecognition from './Components/FaceRecognition/FaceRecognition';
 import Navigation from './Components/Navigation/Navigation';
-import Signin from './Components/Signin/Signin';
+import SignIn from './Components/SignIn/SignIn';
 import Register from './Components/Register/Register';
 import Logo from './Components/Logo/Logo';
 import ImageLinkForm from './Components/ImageLinkForm/ImageLinkForm';
@@ -150,7 +150,7 @@ class App extends Component {
             </div>
           : (
               route === 'signin'
-              ? <Signin 
+              ? <SignIn 
                   loadUser={this.loadUser} 
                   onRouteChange={this.onRouteChange} 
                 />
